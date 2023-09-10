@@ -1,40 +1,195 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <title>Bachelor Präsentation</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+      <section>
+        <h1 class="r-fit-text">Effiziente kürzeste Wege Algorithmen<br>zur Pfadermittlung in der Videospielwelt<br>von
+          Old School RuneScape</h1>
+        <p style="text-align: start;">
+          <br><br>
+          Oliver Zeidler<br>
+          Fachhochschule Dortmund
+        </p>
+      </section>
+
+
+      <section>
+        <section>
+          <h2>OSRS Live Demo</h2>
+          <ul>
+            <li>Karte und Positionen</li>
+            <li>Laufen und Gehen</li>
+            <li>Teleportationen und die Wildniss</li>
+            <li>Transportwege</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Karte</h3>
+          <div class="r-stack">
+            <img class="fragment" src="media/osrs/karte_oberfläche.png" alt="Karte der gesamten Oberflächenwelt">
+            <img class="fragment" src="media/osrs/karte_zoombox_craftingguild.png"
+              alt="Karte der gesamten Oberflächenwelt mit einer Zoombox in Richtung Crafting Guild">
+            <img class="fragment" src="media/osrs/karte_craftingguild.png"
+              alt="Kartenausschnitt, der die Crafting Guild enthält">
+            <img class="fragment" src="media/osrs/karte_craftingguild_zoombox_ingame.png"
+              alt="Kartenausschnitt, der die Crafting Guild enthält, mit einer Zoombox, der den sichtbaren Bereich im Spiel reflektiert">
+            <img class="fragment" src="media/osrs/ingame_crafting_guild.PNG"
+              alt="Ingame Screenshot in der Crafting Guild">
+          </div>
+          <aside><small>Quelle: <a href="https://oldschool.runescape.wiki/">OSRS Wiki</a> </small></aside>
+        </section>
+
+        <section>
+          <h3>Positionen</h3>
+          <img class="r-stretch" src="media/osrs/positionen.svg"
+            alt="Visualisierung der Schachbrett-artigen Positionen">
+          <aside><small>Quelle: Projektarbeit</small></aside>
+        </section>
+
+        <section>
+          <h3>Gehen</h3>
+          <video src="media/osrs/ingame_gehen.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Laufen</h3>
+          <video src="media/osrs/ingame_laufen.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Laufen (ungerade)</h3>
+          <video src="media/osrs/ingame_laufen_ungerade.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Teleportieren</h3>
+          <video src="media/osrs/ingame_teleport.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Teleportieren in Wildniss</h3>
+          <video src="media/osrs/ingame_teleport_wildy.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Transportwege</h3>
+          <video src="media/osrs/ingame_transport_stairs.mp4" loop></video>
+        </section>
+
+        <section>
+          <h3>Transportwege</h3>
+          <video src="media/osrs/ingame_transport_glider.mp4" loop></video>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>Bewegung in OSRS</h2>
+        <h3>Gehen</h3>
+        <img src="media/osrs/gehen.svg" alt="Visualisierung: Für 4 Positionen werden 4 Gehshritte benötigt">
+        <h3>Laufen</h3>
+        <img src="media/osrs/laufen.svg" alt="Visualisierung: Für 4 Positionen werden 2 Laufschritte benötigt">
+        <img src="media/osrs/laufen_ungerade.svg"
+          alt="Visualisierung: Für 5 Positionen werden 2 Laufschritte und 1 Gehschritt benötigt">
+      </section>
+
+      <section>
+        <h2>Bewegung in OSRS</h2>
+        <h3>Wildniss</h3>
+        <div class="r-stack r-stretch">
+          <img class="fragment" src="media/osrs/karte_zoombox_wildniss.png"
+            alt="Karte der gesamten Oberflächenwelt mit hervorgehobener Wildniss">
+          <img class="fragment" src="media/osrs/karte_wildniss.png"
+            alt="Kartenausschnitt der Wildniss mit Wildniss-Stufen">
+        </div>
+        <aside><small>Quelle: <a href="https://oldschool.runescape.wiki/">OSRS Wiki</a> </small></aside>
+      </section>
+
+      <section>
+        <h2>Bewegung in OSRS</h2>
+        <h3>Zusammenfassung</h3>
+        <ul>
+          <li>Gehschritt: 1 Position pro Zyklus</li>
+          <li>Laufschritt: 2 Positionen pro Zyklus</li>
+          <li>Teleportationen</li>
+          <ul>
+            <li>Feste Zielposition</li>
+            <li>Außerhalb der Wildniss überall einsetzbar</li>
+            <li>Einige bis Wildniss-Stufe 30 einsetzbar;<br>die meisten bis Stufe 20</li>
+          </ul>
+          <li>Transportwege: Punkt-zu-Punkt Verbindungen</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bewegung in OSRS</h2>
+        <h3>Pfade</h3>
+        <img class="r-stretch" src="media/osrs/pfade.svg"
+          alt="Mehrere Pfade mit unterschiedlichen Bewegungsmöglichkeiten von einem Startpunkt zum Ziel">
+        <aside><small>Quelle: Projektarbeit</small></aside>
+      </section>
+
+      <section>
+        <h2>Bewegung in OSRS</h2>
+        <h3>Anforderungen zur Pfadermittlung</h3>
+        <ul>
+          <li>Ausschließen bestimmter Teleportationen und Transportwege ermöglichen</li>
+          <li>Effiziente Pfadermittlung (&lt;100ms)</li>
+          <li>Pfade enthalten keine überschüssigen Diagonalschritte</li>
+          <li>Pfade sind optimal</li>
+          <ul>
+            <li>Korrekte Nutzung von Teleportationen innerhalb der Wildniss</li>
+            <li>Korrekte Nutzung von Lauf- und Gehschritten</li>
+          </ul>
+        </ul>
+      </section>
+
+
+
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+      autoPlayMedia: true
+
+    });
+
+    alert("Bitte AutoPlay im Browser aktivieren.")
+  </script>
+</body>
+
 </html>
