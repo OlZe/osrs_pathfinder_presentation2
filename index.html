@@ -14,7 +14,11 @@
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-
+  <style>
+    td {
+      vertical-align: middle;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,8 +38,12 @@
 
 
       <section>
+        <h2>Bewegung in OSRS</h2>
+      </section>
+
+      <section>
         <section>
-          <h2>OSRS Live Demo</h2>
+          <h3>Live Demo</h3>
           <ul>
             <li>Karte und Positionen</li>
             <li>Laufen und Gehen</li>
@@ -105,17 +113,18 @@
       </section>
 
       <section>
-        <h2>Bewegung in OSRS</h2>
         <h3>Gehen</h3>
-        <img src="media/osrs/gehen.svg" alt="Visualisierung: Für 4 Positionen werden 4 Gehshritte benötigt">
+        <img style="width: 40%" src="media/osrs/gehen.svg"
+          alt="Visualisierung: Für 4 Positionen werden 4 Gehshritte benötigt">
         <h3>Laufen</h3>
-        <img src="media/osrs/laufen.svg" alt="Visualisierung: Für 4 Positionen werden 2 Laufschritte benötigt">
-        <img src="media/osrs/laufen_ungerade.svg"
+        <img style="width: 40%;" src="media/osrs/laufen.svg"
+          alt="Visualisierung: Für 4 Positionen werden 2 Laufschritte benötigt">
+        <br>
+        <img style="width: 48%" src="media/osrs/laufen_ungerade.svg"
           alt="Visualisierung: Für 5 Positionen werden 2 Laufschritte und 1 Gehschritt benötigt">
       </section>
 
       <section>
-        <h2>Bewegung in OSRS</h2>
         <h3>Wildniss</h3>
         <div class="r-stack r-stretch">
           <img class="fragment" src="media/osrs/karte_zoombox_wildniss.png"
@@ -127,7 +136,6 @@
       </section>
 
       <section>
-        <h2>Bewegung in OSRS</h2>
         <h3>Zusammenfassung</h3>
         <ul>
           <li>Gehschritt: 1 Position pro Zyklus</li>
@@ -143,7 +151,6 @@
       </section>
 
       <section>
-        <h2>Bewegung in OSRS</h2>
         <h3>Pfade</h3>
         <img class="r-stretch" src="media/osrs/pfade.svg"
           alt="Mehrere Pfade mit unterschiedlichen Bewegungsmöglichkeiten von einem Startpunkt zum Ziel">
@@ -151,20 +158,125 @@
       </section>
 
       <section>
-        <h2>Bewegung in OSRS</h2>
-        <h3>Anforderungen zur Pfadermittlung</h3>
+        <h3>Anforderungen Pfadermittlung</h3>
         <ul>
-          <li>Ausschließen bestimmter Teleportationen und Transportwege ermöglichen</li>
+          <li>Ausschluss bestimmter Telep./Transp.</li>
           <li>Effiziente Pfadermittlung (&lt;100ms)</li>
-          <li>Pfade enthalten keine überschüssigen Diagonalschritte</li>
+          <li>Keine überschüssige Diagonalschritte</li>
           <li>Pfade sind optimal</li>
           <ul>
-            <li>Korrekte Nutzung von Teleportationen innerhalb der Wildniss</li>
-            <li>Korrekte Nutzung von Lauf- und Gehschritten</li>
+            <li>Teleportationen in Wildniss</li>
+            <li>Lauf- und Gehschritte</li>
           </ul>
         </ul>
       </section>
 
+      <section>
+        <h2>Umsetzung als Graphenproblem</h2>
+      </section>
+
+      <section>
+        <h3>Modellierung</h3>
+        <div class="r-stack r-stretch">
+          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices.drawio.svg"
+            alt="Visualisierung von Knoten">
+          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices_walk.drawio.svg"
+            alt="Visualisierung von Knoten und Gehschritten">
+          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices_walk_transports.drawio.svg"
+            alt="Visualisierung von Knoten, Gehschritten und Transportwegen">
+          <img class="fragment" style="height: 100%;" src="media/graph/model_full.drawio.svg"
+            alt="Visualisierung von Knoten, Gehschritten, Transportwegen und Teleportationen">
+        </div>
+      </section>
+
+      <section>
+        <h3>Kostenfunktion</h3>
+        <div style="display: flex; flex-flow: row nowrap; justify-content: space-between;">
+          <figure style="width: 50%;">
+            <img src="media/graph/kostenfunktion_modell.svg" alt="Beispiel eines Pfades im Graphen">
+            <figcaption style="font-size: x-large;">
+              Modell<br>
+              $\lceil \frac{1}{2} + \frac{1}{2} + \frac{1}{2} \rceil + 3
+              + \lceil \frac{1}{2} + \frac{1}{2} + \frac{1}{2} \rceil = 7$</figcaption>
+          </figure>
+          <figure style="width: 50%;">
+            <img src="media/graph/kostenfunktion_tatsächlich.svg" alt="Das äquivalente Pfad im Spiel">
+            <figcaption style="font-size: x-large;">
+              Im Spiel<br>
+              $1 + 1 + 3 + 1 + 1 = 7$
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h3>Teleportationsursprünge</h3>
+        <img src="media/graph/teleportationsursprünge.svg" alt="Beispiel, welches Teleportationsursprünge visualisiert"
+          class="r-stretch">
+      </section>
+
+      <section>
+        <h2>Suchverfahren</h2>
+      </section>
+
+      <section>
+        <h3>Suchverfahren</h3>
+        <table style="font-size: xx-large;">
+          <thead>
+            <tr>
+              <th>Algorithmus</th>
+              <th>Datenstruktur</th>
+              <th>Kantentyp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dijkstra<br>Dijkstra-Backwards</td>
+              <td>PriorityQueue<br>BucketQueue<br>ArrayQueue</td>
+              <td>gewichtet</td>
+            </tr>
+            <tr>
+              <td>BFS<br>BFS-Backwards<br>BFS-MeetInMiddle<br>BFS-MeetAtTeleport</td>
+              <td>UnweightedQueue</td>
+              <td>ungewichtet</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Dijkstra</h3>
+
+        <div class="r-stack r-stretch">
+          <img src="media/algorithms/dijkstra/anfangszustand.svg" height="100%" alt="Beispiel Dijkstra: Anfangszustand"
+            class="fragment">
+          <img src="media/algorithms/dijkstra/anfang.svg" height="100%"
+            alt="Beispiel Dijkstra: Anfang der Vorwärtssuche" class="fragment">
+          <img src="media/algorithms/dijkstra/t30.svg" height="100%"
+            alt="Beispiel Dijkstra: Teleportationsursprung 30 gefunden" class="fragment">
+          <img src="media/algorithms/dijkstra/t20.svg" height="100%"
+            alt="Beispiel Dijkstra: Teleportationsursprung 20 gefunden" class="fragment">
+          <img src="media/algorithms/dijkstra/final.svg" height="100%" alt="Beispiel Dijkstra: Pfad gefunden"
+            class="fragment">
+      </section>
+
+      <section>
+        <h3>Dijkstra-Backwards</h3>
+
+        <div class="r-stack r-stretch">
+          <img src="media/algorithms/dijkstra-backwards/anfangszustand.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Anfangszustand" class="fragment">
+          <img src="media/algorithms/dijkstra-backwards/forwärts_t30+t20.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge vorwärts gefunden" class="fragment">
+          <img src="media/algorithms/dijkstra-backwards/t30+t20.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge werden festgehalten" class="fragment">
+          <img src="media/algorithms/dijkstra-backwards/rückwärts_anfang.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche fängt an" class="fragment">
+          <img src="media/algorithms/dijkstra-backwards/rückwärts_t20.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 20 zum Ursprung" class="fragment">
+          <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 30 zum Urpsurng und findet später Startposition" class="fragment">
+        </section>
 
 
     </div>
@@ -174,6 +286,7 @@
   <script src="plugin/notes/notes.js"></script>
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/math/math.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -182,7 +295,7 @@
       hash: true,
 
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
 
       autoPlayMedia: true
 
