@@ -55,12 +55,13 @@
         <section>
           <h3>Karte</h3>
           <div class="r-stack">
-            <img class="fragment" src="media/osrs/karte_oberfläche.png" alt="Karte der gesamten Oberflächenwelt">
-            <img class="fragment" src="media/osrs/karte_zoombox_craftingguild.png"
+            <img class="fragment fade-in-then-out" src="media/osrs/karte_oberfläche.png"
+              alt="Karte der gesamten Oberflächenwelt">
+            <img class="fragment fade-in-then-out" src="media/osrs/karte_zoombox_craftingguild.png"
               alt="Karte der gesamten Oberflächenwelt mit einer Zoombox in Richtung Crafting Guild">
-            <img class="fragment" src="media/osrs/karte_craftingguild.png"
+            <img class="fragment fade-in-then-out" src="media/osrs/karte_craftingguild.png"
               alt="Kartenausschnitt, der die Crafting Guild enthält">
-            <img class="fragment" src="media/osrs/karte_craftingguild_zoombox_ingame.png"
+            <img class="fragment fade-in-then-out" src="media/osrs/karte_craftingguild_zoombox_ingame.png"
               alt="Kartenausschnitt, der die Crafting Guild enthält, mit einer Zoombox, der den sichtbaren Bereich im Spiel reflektiert">
             <img class="fragment" src="media/osrs/ingame_crafting_guild.PNG"
               alt="Ingame Screenshot in der Crafting Guild">
@@ -127,7 +128,7 @@
       <section>
         <h3>Wildniss</h3>
         <div class="r-stack r-stretch">
-          <img class="fragment" src="media/osrs/karte_zoombox_wildniss.png"
+          <img class="fragment fade-in-then-out" src="media/osrs/karte_zoombox_wildniss.png"
             alt="Karte der gesamten Oberflächenwelt mit hervorgehobener Wildniss">
           <img class="fragment" src="media/osrs/karte_wildniss.png"
             alt="Kartenausschnitt der Wildniss mit Wildniss-Stufen">
@@ -140,13 +141,13 @@
         <ul>
           <li>Gehschritt: 1 Position pro Zyklus</li>
           <li>Laufschritt: 2 Positionen pro Zyklus</li>
-          <li>Teleportationen</li>
+          <li>179 Teleportationen</li>
           <ul>
             <li>Feste Zielposition</li>
-            <li>Außerhalb der Wildniss überall einsetzbar</li>
-            <li>Einige bis Wildniss-Stufe 30 einsetzbar;<br>die meisten bis Stufe 20</li>
+            <li>Außerhalb Wildniss überall einsetzbar</li>
+            <li>27 bis Wildniss-Stufe 30<br>152 bis Wildniss-Stufe 20</li>
           </ul>
-          <li>Transportwege: Punkt-zu-Punkt Verbindungen</li>
+          <li>4.946 Transportwege: Punkt-zu-Punkt Verbindungen</li>
         </ul>
       </section>
 
@@ -178,11 +179,12 @@
       <section>
         <h3>Modellierung</h3>
         <div class="r-stack r-stretch">
-          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices.drawio.svg"
+          <img class="fragment fade-in-then-out" style="height: 100%;" src="media/graph/model_vertices.drawio.svg"
             alt="Visualisierung von Knoten">
-          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices_walk.drawio.svg"
+          <img class="fragment fade-in-then-out" style="height: 100%;" src="media/graph/model_vertices_walk.drawio.svg"
             alt="Visualisierung von Knoten und Gehschritten">
-          <img class="fragment" style="height: 100%;" src="media/graph/model_vertices_walk_transports.drawio.svg"
+          <img class="fragment fade-in-then-out" style="height: 100%;"
+            src="media/graph/model_vertices_walk_transports.drawio.svg"
             alt="Visualisierung von Knoten, Gehschritten und Transportwegen">
           <img class="fragment" style="height: 100%;" src="media/graph/model_full.drawio.svg"
             alt="Visualisierung von Knoten, Gehschritten, Transportwegen und Teleportationen">
@@ -249,15 +251,18 @@
 
         <div class="r-stack r-stretch">
           <img src="media/algorithms/dijkstra/anfangszustand.svg" height="100%" alt="Beispiel Dijkstra: Anfangszustand"
-            class="fragment">
+            class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra/anfang.svg" height="100%"
-            alt="Beispiel Dijkstra: Anfang der Vorwärtssuche" class="fragment">
+            alt="Beispiel Dijkstra: Anfang der Vorwärtssuche" class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra/t30.svg" height="100%"
-            alt="Beispiel Dijkstra: Teleportationsursprung 30 gefunden" class="fragment">
+            alt="Beispiel Dijkstra: Teleportationsursprung 30 gefunden" class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra/t20.svg" height="100%"
-            alt="Beispiel Dijkstra: Teleportationsursprung 20 gefunden" class="fragment">
+            alt="Beispiel Dijkstra: Teleportationsursprung 20 gefunden" class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra/final.svg" height="100%" alt="Beispiel Dijkstra: Pfad gefunden"
             class="fragment">
+        </div>
+
+        <aside><small>Quelle: Introduction to algorithms, Thomas H Cormen u.a.</small></aside>
       </section>
 
       <section>
@@ -265,19 +270,126 @@
 
         <div class="r-stack r-stretch">
           <img src="media/algorithms/dijkstra-backwards/anfangszustand.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Anfangszustand" class="fragment">
+            alt="Beispiel Dijkstra-Backwards: Anfangszustand" class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra-backwards/forwärts_t30+t20.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge vorwärts gefunden" class="fragment">
+            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge vorwärts gefunden"
+            class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra-backwards/t30+t20.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge werden festgehalten" class="fragment">
+            alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge werden festgehalten"
+            class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_anfang.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche fängt an" class="fragment">
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche fängt an" class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_t20.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 20 zum Ursprung" class="fragment">
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 20 zum Ursprung"
+            class="fragment fade-in-then-out">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg" height="100%"
-            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 30 zum Urpsurng und findet später Startposition" class="fragment">
-        </section>
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 30 zum Urpsurng und findet später Startposition"
+            class="fragment fade-in-then-out">
+          <div class="fragment" style="height: 100%; display: flex; flex-flow: row nowrap; align-items: center;">
+            <figure>
+              <img src="media/algorithms/dijkstra/final.svg" alt="Vergleich der abgesuchten Fläche: Dijkstra">
+              <figcaption><small>Dijkstra</small></figcaption>
+            </figure>
+            <figure>
+              <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg"
+                alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards">
+              <figcaption><small>Dijkstra-Backwards</small></figcaption>
+            </figure>
+          </div>
+      </section>
 
+      <section>
+        <h3>PriorityQueue</h3>
+        <div class="r-stretch" style="display: flex; align-items: center; justify-content: center;">
+          <img src="media/algorithms/priorityqueue/bheap.svg" width="100%" alt="Visualisierung eines Min-Heaps">
+        </div>
+        <aside><small>
+            Quelle: Introduction to algorithms, Thomas H Cormen u.a.
+          </small></aside>
+      </section>
+
+      <section>
+        <h3>BucketQueue</h3>
+        <img src="media/algorithms/bucketqueue/bucketqueue.svg" alt="Visualisierung der BucketQueue" class="r-stretch">
+      </section>
+
+      <section>
+        <h3>ArrayQueue</h3>
+        <div class="r-stretch"
+          style="display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: stretch;">
+          <img src="media/algorithms/arrayqueue/1.svg" alt="Visualisierung von ArrayQueue in einem Beispielzustand">
+          <img class="fragment" src="media/algorithms/arrayqueue/2.svg"
+            alt="Visualisierung von ArrayQueue in einem späteren Zustand">
+        </div>
+      </section>
+
+      <section>
+        <h3>Ungewichteter Graph</h3>
+        <div style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; align-items: center;">
+          <figure>
+            <img src="media/algorithms/unweightedgraph/example_weighted.svg" height="50%"
+              alt="Beispiel eines gewichteten Graphen">
+            <figcaption><small>Gewichtet</small></figcaption>
+          </figure>
+          <figure>
+            <img src="media/algorithms/unweightedgraph/example_unweighted.svg" height="50%"
+              alt="Beispiel eines ähnlichen ungewichteten Graphen">
+            <figcaption><small>Ungewichtet</small></figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="r-stretch" style="display: flex; flex-flow: column nowrap; justify-content: space-evenly;">
+          <div>
+            <h3>BFS</h3>
+            <p>Ungewichtetes Analog zu Dijkstra</p>
+          </div>
+          <div>
+            <h3>BFS-Backwards</h3>
+            <p>Ungewichtetes Analog zu Dijkstra-Backwards</p>
+          </div>
+        </div>
+        <aside><small>Quelle: Introduction to algorithms, Thomas H Cormen u.a.</small></aside>
+      </section>
+
+      <section>
+        <h3>BFS-MeetInMiddle</h3>
+        <h4>Abgesuchte Fläche</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; justify-items: stretch; align-items: center;">
+          <figure style="display: contents">
+            <img src="media/algorithms/bfs-mitm/circlearea_forwards.svg" alt="Suchfläche der Vorwärtssuche"
+              style="grid-area: 1 / 1 / 2 / 2;">
+            <figcaption style="grid-area: 2 / 1 / 3 / 2;"><small>Vorwärts</small></figcaption>
+          </figure>
+          <figure style="display: contents">
+            <img src="media/algorithms/bfs-mitm/circlearea_backwards.svg" alt="Suchfläche der Rückwärtssuche"
+              style="grid-area: 1 / 2 / 2 / 3;">
+            <figcaption style="grid-area: 2 / 2 / 3 / 3;"><small>Rückwärts</small></figcaption>
+          </figure>
+          <figure style="display: contents">
+            <img src="media/algorithms/bfs-mitm/circlearea_mitm.svg"
+              alt="Suchfläche der kombinierten Vorwärts-/Rückwärtssuche" style="grid-area: 1 / 3 / 2 / 4;">
+            <figcaption style="grid-area: 2 / 3 / 3 / 4;"><small>Meet in the Middle</small></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h3>BFS-MeetInMiddle</h3>
+        <h4>Funktionsweise</h4>
+        <div class="r-stretch r-stack">
+          <img src="media/algorithms/bfs-mitm/example_anfangszustand.svg" class="fragment fade-in-then-out" style="height: 100%;"
+            alt="Beispiel BFS-MeetInMiddle: Anfangszustand">
+          <img src="media/algorithms/bfs-mitm/example_1.svg" class="fragment fade-in-then-out" style="height: 100%;"
+            alt="Beispiel BFS-MeetInMiddle: Vorwärtssuche bis Teleportationsursprünge gefunden sind">
+          <img src="media/algorithms/bfs-mitm/example_2.svg" class="fragment fade-in-then-out" style="height: 100%;"
+            alt="Beispiel BFS-MeetInMiddle: Rückwärtssuche bis die Suchflächen beider Suchen gleich groß sind">
+          <img src="media/algorithms/bfs-mitm/example_3.svg" class="fragment" style="height: 100%;"
+            alt="Beispiel BFS-MeetInMiddle: Alternierendes Erweitern beider Suchflächen bis diese sich treffen">
+        </div>
+      </section>
 
     </div>
   </div>
