@@ -285,14 +285,19 @@
           <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg" height="100%"
             alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 30 zum Urpsurng und findet später Startposition"
             class="fragment fade-in-then-out">
-          <div class="fragment" style="height: 100%; display: flex; flex-flow: row nowrap; align-items: center;">
-            <figure>
-              <img src="media/algorithms/dijkstra/final.svg" alt="Vergleich der abgesuchten Fläche: Dijkstra">
+          <img src="media/algorithms/dijkstra-backwards/final.svg" height="100%"
+            alt="Beispiel Dijkstra-Backwards: Die finale Visualisierung der Vorwärts- und Rückwärtssuchflächen"
+            class="fragment fade-in-then-out">
+          <div class="fragment"
+            style="height: 100%; width: 100%; display: flex; flex-flow: row nowrap; align-items: center;">
+            <figure style="flex-grow: 1;">
+              <img src="media/algorithms/dijkstra/final.svg" alt="Vergleich der abgesuchten Fläche: Dijkstra"
+                style="width: 100%;">
               <figcaption><small>Dijkstra</small></figcaption>
             </figure>
-            <figure>
-              <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg"
-                alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards">
+            <figure style="flex-grow: 1;">
+              <img src="media/algorithms/dijkstra-backwards/final.svg"
+                alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards" style="width: 100%;">
               <figcaption><small>Dijkstra-Backwards</small></figcaption>
             </figure>
           </div>
@@ -380,14 +385,91 @@
         <h3>BFS-MeetInMiddle</h3>
         <h4>Funktionsweise</h4>
         <div class="r-stretch r-stack">
-          <img src="media/algorithms/bfs-mitm/example_anfangszustand.svg" class="fragment fade-in-then-out" style="height: 100%;"
-            alt="Beispiel BFS-MeetInMiddle: Anfangszustand">
+          <img src="media/algorithms/bfs-mitm/example_anfangszustand.svg" class="fragment fade-in-then-out"
+            style="height: 100%;" alt="Beispiel BFS-MeetInMiddle: Anfangszustand">
           <img src="media/algorithms/bfs-mitm/example_1.svg" class="fragment fade-in-then-out" style="height: 100%;"
             alt="Beispiel BFS-MeetInMiddle: Vorwärtssuche bis Teleportationsursprünge gefunden sind">
           <img src="media/algorithms/bfs-mitm/example_2.svg" class="fragment fade-in-then-out" style="height: 100%;"
             alt="Beispiel BFS-MeetInMiddle: Rückwärtssuche bis die Suchflächen beider Suchen gleich groß sind">
           <img src="media/algorithms/bfs-mitm/example_3.svg" class="fragment" style="height: 100%;"
             alt="Beispiel BFS-MeetInMiddle: Alternierendes Erweitern beider Suchflächen bis diese sich treffen">
+        </div>
+      </section>
+
+      <section>
+        <h3>BFS-MeetInMiddle</h3>
+        <h4>Warum ungewichtet?</h4>
+        <div class="r-stretch r-stack">
+          <figure class="fragment fade-in-then-out"
+            style="height: 100%; width: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-mitm/transportproblem_weighted.svg"
+                alt="Beispiel, indem ein Meet-in-the-Middle-Verfahren wegen eines gewichteten Graphen nicht optimal ist"
+                style="height: calc(100% - 40px);">
+            </div>
+            <figcaption><small>Gewichtet</small></figcaption>
+          </figure>
+          <figure class="fragment" style="height: 100%; width: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-mitm/transportproblem_unweighted.svg"
+                alt="Das selbe Beispiel, indem das Meet-in-the-Middle-Verfahren auf Grund des ungewichteten Graphen optimal ist"
+                style="height: calc(100% - 40px);">
+            </div>
+            <figcaption><small>Ungewichtet</small></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h3>BFS-MeetInMiddle</h3>
+        <h4>Vergleich Dijkstra-Backwards</h4>
+
+        <div class="r-stretch" style="display: flex; flex-flow: row nowrap; align-items: center;">
+          <figure style=" flex-grow: 1;">
+            <img src="media/algorithms/bfs-mitm/example_3.svg" alt="Vergleich der abgesuchten Fläche: BFS-MeetInMiddle"
+              style="width: 100%;">
+            <figcaption><small>BFS-MeetInMiddle</small></figcaption>
+          </figure>
+          <figure style="flex-grow: 1;">
+            <img src="media/algorithms/dijkstra-backwards/final.svg"
+              alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards" style="width: 100%;">
+              <figcaption><small>Dijkstra-Backwards</small></figcaption>
+            </figure>
+        </div>
+      </section>
+
+      <section>
+        <h3>BFS-MeetAtTeleport</h3>
+        <h4>Effiziente Vorwärts-/Rückwärtssuchen</h4>
+        <div class="r-stretch r-stack">
+          <!-- <figure class="fragment fade-in-then-out" style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-matp/effizienz_scenario.svg" style="object-fit: contain; width: 100%; height: 100%;" alt="">
+            </div>
+            <figcaption><small></small></figcaption>
+          </figure>
+
+          <figure class="fragment fade-in-then-out" style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-matp/effizienz_forward.svg" style="object-fit: contain; width: 100%; height: 100%;" alt="">
+            </div>
+            <figcaption><small>Vorwärts</small></figcaption>
+          </figure>
+
+          <figure class="fragment fade-in-then-out" style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-matp/effizienz_backwards.svg" style="object-fit: contain; width: 100%; height: 100%;" alt="">
+            </div>
+            <figcaption><small>Rückwärts</small></figcaption>
+          </figure> -->
+
+          <figure class="fragment fade-in-then-out" style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
+            <div style="flex-grow: 1;">
+              <img src="media/algorithms/bfs-matp/effizienz_matp.svg" style="object-fit: contain; width: 100%; height: 100%;" alt="">
+            </div>
+            <figcaption><small>Meet at the Teleport</small></figcaption>
+          </figure>
+
         </div>
       </section>
 
