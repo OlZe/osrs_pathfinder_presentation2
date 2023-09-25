@@ -25,11 +25,11 @@
       vertical-align: middle;
     }
 
-    img {
+    /* img {
       height: 100%;
       width: 100%;
       object-fit: contain;
-    }
+    } */
 
     figure {
       display: contents;
@@ -47,9 +47,11 @@
 
 
       <section>
-        <h1 class="r-fit-text" style="margin-top: 5vh; margin-bottom: 5vh;">Effiziente kürzeste Wege Algorithmen<br>zur Pfadermittlung in der Videospielwelt<br>von
+        <h1 class="r-fit-text" style="margin-top: 5vh; margin-bottom: 5vh;">Effiziente kürzeste Wege Algorithmen<br>zur
+          Pfadermittlung in der Videospielwelt<br>von
           Old School RuneScape</h1>
-        <div class="r-stretch" style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;">
+        <div class="r-stretch"
+          style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;">
           <p style="text-align: start;">
             Oliver Zeidler<br>
             Fachhochschule Dortmund
@@ -148,7 +150,7 @@
       </section>
 
       <section>
-        <div class="r-stretch" style="display:flex; flex-flow: column nowrap; align-items: stretch;">
+        <div class="r-stretch" style="display:flex; flex-flow: column nowrap; align-items: center;">
           <h3>Gehen</h3>
           <img src="media/osrs/gehen.svg" alt="Visualisierung: Für 4 Positionen werden 4 Gehshritte benötigt"
             style="flex: 1">
@@ -164,9 +166,11 @@
         <h3>Wildniss</h3>
         <div class="r-stack r-stretch">
           <img class="fragment fade-in-then-out" src="media/osrs/karte_zoombox_wildniss.png"
-            alt="Karte der gesamten Oberflächenwelt mit hervorgehobener Wildniss">
+            alt="Karte der gesamten Oberflächenwelt mit hervorgehobener Wildniss"
+            style="height: inherit; width: inherit; object-fit: contain;">
           <img class="fragment" src="media/osrs/karte_wildniss.png"
-            alt="Kartenausschnitt der Wildniss mit Wildniss-Stufen">
+            alt="Kartenausschnitt der Wildniss mit Wildniss-Stufen"
+            style="height: inherit; width: inherit; object-fit: contain;">
         </div>
         <aside><small>Quelle: <a href="https://oldschool.runescape.wiki/">OSRS Wiki</a> </small></aside>
       </section>
@@ -213,7 +217,7 @@
 
       <section>
         <h3>Modellierung</h3>
-        <div class="r-stack r-stretch">
+        <div class="r-stack">
           <img class="fragment fade-in-then-out" src="media/graph/model_vertices.drawio.svg"
             alt="Visualisierung von Knoten">
           <img class="fragment fade-in-then-out" src="media/graph/model_vertices_walk.drawio.svg"
@@ -250,9 +254,11 @@
         <h3>Teleportationsursprünge</h3>
         <div class="r-stack r-stretch">
           <img class="fragment fade-in-then-out" src="media/algorithms/dijkstra/anfangszustand.svg"
-            alt="Eine Beispielkarte, in der die Teleportationsursprünge unbekannt sind">
+            alt="Eine Beispielkarte, in der die Teleportationsursprünge unbekannt sind"
+            style="height: inherit; width: inherit; object-fit: contain;">
           <img class="fragment" src="media/graph/teleportationsursprünge.svg"
-            alt="Eine Beispielkarte, in der Teleportationsursprünge bekannt sind" class="r-stretch">
+            alt="Eine Beispielkarte, in der Teleportationsursprünge bekannt sind" class="r-stretch"
+            style="height: inherit; width: inherit; object-fit: contain;">
         </div>
       </section>
 
@@ -290,16 +296,17 @@
 
         <div class="r-stack r-stretch">
           <img src="media/algorithms/dijkstra/anfangszustand.svg" alt="Beispiel Dijkstra: Anfangszustand"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra/anfang.svg" alt="Beispiel Dijkstra: Anfang der Vorwärtssuche"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra/t30.svg" alt="Beispiel Dijkstra: Teleportationsursprung 30 gefunden"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra/t20.svg" alt="Beispiel Dijkstra: Teleportationsursprung 20 gefunden"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra/t20+.svg" alt="Beispiel Dijkstra: Sucht weiter"
-            class="fragment fade-in-then-out">
-          <img src="media/algorithms/dijkstra/final.svg" alt="Beispiel Dijkstra: Pfad gefunden" class="fragment">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
+          <img src="media/algorithms/dijkstra/final.svg" alt="Beispiel Dijkstra: Pfad gefunden" class="fragment"
+            style="height: inherit; width: inherit; object-fit: contain;">
         </div>
 
         <aside><small>Quelle: Introduction to algorithms, Thomas H Cormen u.a.</small></aside>
@@ -310,33 +317,37 @@
 
         <div class="r-stack r-stretch">
           <img src="media/algorithms/dijkstra-backwards/anfangszustand.svg"
-            alt="Beispiel Dijkstra-Backwards: Anfangszustand" class="fragment fade-in-then-out">
+            alt="Beispiel Dijkstra-Backwards: Anfangszustand" class="fragment fade-in-then-out"
+            style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/forwärts_t30+t20.svg"
             alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge vorwärts gefunden"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/t30+t20.svg"
             alt="Beispiel Dijkstra-Backwards: Teleportationsursprünge werden festgehalten"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_anfang.svg"
-            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche fängt an" class="fragment fade-in-then-out">
+            alt="Beispiel Dijkstra-Backwards: Rückwärtssuche fängt an" class="fragment fade-in-then-out"
+            style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_t20.svg"
             alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 20 zum Ursprung"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/rückwärts_t30.svg"
             alt="Beispiel Dijkstra-Backwards: Rückwärtssuche verfolgt Teleportation 30 zum Urpsurng und findet später Startposition"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <img src="media/algorithms/dijkstra-backwards/final.svg"
             alt="Beispiel Dijkstra-Backwards: Die finale Visualisierung der Vorwärts- und Rückwärtssuchflächen"
-            class="fragment fade-in-then-out">
+            class="fragment fade-in-then-out" style="height: inherit; width: inherit; object-fit: contain;">
           <div class="fragment"
-            style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column; justify-items: center; row-gap: 20px;">
+            style="width: inherit; height: inherit; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column; justify-items: center;">
             <figure>
-              <img src="media/algorithms/dijkstra/final.svg" alt="Vergleich der abgesuchten Fläche: Dijkstra">
+              <img src="media/algorithms/dijkstra/final.svg" alt="Vergleich der abgesuchten Fläche: Dijkstra"
+                style="align-self: stretch; justify-self: stretch; object-fit: contain;">
               <figcaption>Dijkstra</figcaption>
             </figure>
             <figure>
               <img src="media/algorithms/dijkstra-backwards/final.svg"
-                alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards">
+                alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards"
+                style="align-self: stretch; justify-self: stretch; object-fit: contain;">
               <figcaption>Dijkstra-Backwards</figcaption>
             </figure>
           </div>
@@ -344,9 +355,7 @@
 
       <section>
         <h3>PriorityQueue</h3>
-        <div class="r-stretch" style="display: flex; align-items: center; justify-content: center;">
-          <img src="media/algorithms/priorityqueue/bheap.svg" alt="Visualisierung eines Min-Heaps">
-        </div>
+        <img class="r-stretch" src="media/algorithms/priorityqueue/bheap.svg" alt="Visualisierung eines Min-Heaps">
         <aside><small>
             Quelle: Introduction to algorithms, Thomas H Cormen u.a.
           </small></aside>
@@ -359,11 +368,11 @@
 
       <section>
         <h3>ArrayQueue</h3>
-        <div class="r-stretch"
-          style="display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: center;">
-          <img src="media/algorithms/arrayqueue/1.svg" alt="Visualisierung von ArrayQueue in einem Beispielzustand">
+        <div style="display: flex; flex-flow: row nowrap; align-items: center; gap: 5vw">
+          <img src="media/algorithms/arrayqueue/1.svg" alt="Visualisierung von ArrayQueue in einem Beispielzustand"
+            style="flex: 1;">
           <img class="fragment" src="media/algorithms/arrayqueue/2.svg"
-            alt="Visualisierung von ArrayQueue in einem späteren Zustand">
+            alt="Visualisierung von ArrayQueue in einem späteren Zustand" style="flex: 1;">
         </div>
       </section>
 
@@ -426,13 +435,17 @@
         <h4>Funktionsweise</h4>
         <div class="r-stretch r-stack">
           <img src="media/algorithms/bfs-mitm/example_anfangszustand.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetInMiddle: Anfangszustand">
+            alt="Beispiel BFS-MeetInMiddle: Anfangszustand"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-mitm/example_1.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetInMiddle: Vorwärtssuche bis Teleportationsursprünge gefunden sind">
+            alt="Beispiel BFS-MeetInMiddle: Vorwärtssuche bis Teleportationsursprünge gefunden sind"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-mitm/example_2.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetInMiddle: Rückwärtssuche bis die Suchflächen beider Suchen gleich groß sind">
+            alt="Beispiel BFS-MeetInMiddle: Rückwärtssuche bis die Suchflächen beider Suchen gleich groß sind"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-mitm/example_3.svg" class="fragment"
-            alt="Beispiel BFS-MeetInMiddle: Alternierendes Erweitern beider Suchflächen bis diese sich treffen">
+            alt="Beispiel BFS-MeetInMiddle: Alternierendes Erweitern beider Suchflächen bis diese sich treffen"
+            style="width: inherit; height: inherit; object-fit: contain;">
         </div>
       </section>
 
@@ -443,17 +456,18 @@
           style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column; justify-items: center;">
           <figure>
             <img src="media/algorithms/bfs-mitm/transportproblem_weighted.svg"
-              alt="Beispiel, indem ein Meet-in-the-Middle-Verfahren wegen eines gewichteten Graphen nicht optimal ist">
+              alt="Beispiel, indem ein Meet-in-the-Middle-Verfahren wegen eines gewichteten Graphen nicht optimal ist"
+              style="align-self: stretch; justify-self: stretch; object-fit: contain;">
             <figcaption>Gewichtet</figcaption>
           </figure>
           <figure>
             <img src="media/algorithms/bfs-mitm/transportproblem_unweighted.svg"
-              alt="Das selbe Beispiel, indem das Meet-in-the-Middle-Verfahren auf Grund des ungewichteten Graphen optimal ist">
+              alt="Das selbe Beispiel, indem das Meet-in-the-Middle-Verfahren auf Grund des ungewichteten Graphen optimal ist"
+              style="align-self: stretch; justify-self: stretch; object-fit: contain;">
             <figcaption>Ungewichtet</figcaption>
           </figure>
         </div>
       </section>
-
 
 
 
@@ -463,12 +477,14 @@
         <div class="r-stretch"
           style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column; justify-items: center;">
           <figure>
-            <img src="media/algorithms/bfs-mitm/example_3.svg" alt="Vergleich der abgesuchten Fläche: BFS-MeetInMiddle">
+            <img src="media/algorithms/bfs-mitm/example_3.svg" alt="Vergleich der abgesuchten Fläche: BFS-MeetInMiddle"
+              style="align-self: stretch; justify-self: stretch; object-fit: contain;">
             <figcaption>BFS-MeetInMiddle</figcaption>
           </figure>
           <figure>
-            <img src="media/algorithms/dijkstra-backwards/final.svg"
-              alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards">
+            <img img src="media/algorithms/dijkstra-backwards/final.svg"
+              alt="Vergleich der abgesuchten Fläche: Dijkstra-Backwards"
+              style="align-self: stretch; justify-self: stretch; object-fit: contain;">
             <figcaption>Dijkstra-Backwards</figcaption>
           </figure>
         </div>
@@ -515,13 +531,17 @@
         <h4>Funktionsweise</h4>
         <div class="r-stretch r-stack">
           <img src="media/algorithms/bfs-matp/example_anfangszustand.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetAtTeleport: Anfangszustand">
+            alt="Beispiel BFS-MeetAtTeleport: Anfangszustand"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-matp/example_1.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetAtTeleport: Vorwärtssuche bis Teleportationsursprünge gefunden sind">
+            alt="Beispiel BFS-MeetAtTeleport: Vorwärtssuche bis Teleportationsursprünge gefunden sind"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-matp/example_2.svg" class="fragment fade-in-then-out"
-            alt="Beispiel BFS-MeetAtTeleport: Rückwärtssuche fängt an">
+            alt="Beispiel BFS-MeetAtTeleport: Rückwärtssuche fängt an"
+            style="width: inherit; height: inherit; object-fit: contain;">
           <img src="media/algorithms/bfs-matp/example_final.svg" class="fragment"
-            alt="Beispiel BFS-MeetAtTeleport: Rückwärtssuche trifft sich mit Vorwärtssuche am Teleportationsursprung">
+            alt="Beispiel BFS-MeetAtTeleport: Rückwärtssuche trifft sich mit Vorwärtssuche am Teleportationsursprung"
+            style="width: inherit; height: inherit; object-fit: contain;">
         </div>
       </section>
 
@@ -529,7 +549,7 @@
         <h3>UnweightedQueue</h3>
         <h4>Besonderheit der Kostenfunktion</h4>
         <img src="media/algorithms/unweightedgraph/example_unweighted.svg" alt="Beispiel ungewichteter Graph"
-          style="height: 40vh;">
+          class="r-stretch">
         <p>Neue Kante erhöht Pfadkosten um 0,5 oder 1</p>
       </section>
 
@@ -537,9 +557,9 @@
         <h3>UnweightedQueue</h3>
         <div style="display: flex; flex-flow: row nowrap; gap: 5vw;">
           <img src="media/algorithms/unweightedqueue/1.svg"
-            alt="Visualisierung von UnweightedQueue in einem Beispielzustand">
+            alt="Visualisierung von UnweightedQueue in einem Beispielzustand" style="flex: 1;">
           <img class="fragment" src="media/algorithms/unweightedqueue/2.svg"
-            alt="Visualisierung von UnweightedQueue in einem späteren Zustand">
+            alt="Visualisierung von UnweightedQueue in einem späteren Zustand" style="flex: 1;">
         </div>
       </section>
 
@@ -549,14 +569,20 @@
       </section>
 
       <section>
-        <h3>Verfahren und Ziel</h3>
-        <ul>
-          <li>Durchschnitts-Berechenzeit &lt; 100ms</li>
-          <ul>
-            <li>Testen zufälliger Eingaben</li>
-          </ul>
-          <li>Ausgewählte Testfälle &lt; 100ms</li>
-        </ul>
+        <h3>Testverfahren</h3>
+        <h4>Ziel: &lt; 100ms in allen Tests</h4>
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; align-items: center; margin-top: 5vh;">
+          <figure style="display: unset;">
+            <img src="media/tests/test_cases.svg" alt="Todo-Liste" style="height: 10vh;">
+            <figcaption style="font-size: 70%;">Ausgewählte Testfälle</figcaption>
+          </figure>
+
+          <figure style="display: unset;">
+            <img src="media/tests/robot.svg" alt="Roboter" style="height: 10vh;">
+            <figcaption style="font-size: 70%;">Automatisierte Zufallseingaben</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section>
@@ -570,49 +596,57 @@
 
         <div class="r-stack r-stretch">
           <figure class="fragment fade-in-then-out"
-            style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path1.png" alt="Pfad des ersten Testfalls">
+            style="width: inherit; height: inherit; display: flex; flex-flow: column nowrap;">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path1.png"
+              alt="Pfad des ersten Testfalls">
             <figcaption>Testfall 1</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path2.png" alt="Pfad des zweiten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path2.png"
+              alt="Pfad des zweiten Testfalls">
             <figcaption>Testfall 2</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path3.png" alt="Pfad des dritten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path3.png"
+              alt="Pfad des dritten Testfalls">
             <figcaption>Testfall 3</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path4.png" alt="Pfad des vierten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path4.png"
+              alt="Pfad des vierten Testfalls">
             <figcaption>Testfall 4</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path5.png" alt="Pfad des fünften Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path5.png"
+              alt="Pfad des fünften Testfalls">
             <figcaption>Testfall 5</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path6.png" alt="Pfad des sechsten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path6.png"
+              alt="Pfad des sechsten Testfalls">
             <figcaption>Testfall 6</figcaption>
           </figure>
 
           <figure class="fragment fade-in-then-out"
             style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path7.png" alt="Pfad des siebten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path7.png"
+              alt="Pfad des siebten Testfalls">
             <figcaption>Testfall 7</figcaption>
           </figure>
 
           <figure class="fragment" style="width: 100%; height: 100%; display: flex; flex-flow: column nowrap;">
-            <img style="flex: 1 1 0;" src="media/tests/path8.png" alt="Pfad des zweiten Testfalls">
+            <img style="flex: 1 1 0; min-height: 0; min-width: 0; object-fit: contain;" src="media/tests/path8.png"
+              alt="Pfad des zweiten Testfalls">
             <figcaption>Testfall 8</figcaption>
           </figure>
         </div>
